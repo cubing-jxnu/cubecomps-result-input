@@ -37,8 +37,8 @@ $(document).ready(function(){
  */
 function fillOptionTd(tr) {
     var td = $("<td></td>").addClass('no-wrap');
-    var edit = '<a href=""><i class="glyphicon glyphicon-edit"></i></a>';
-    var trash = '<a href=""><i class="glyphicon glyphicon-trash"></i></a>';
+    var edit = '<a href=""><i class="glyphicon glyphicon-edit"></i></a> ';
+    var trash = '<a href=""><i class="glyphicon glyphicon-trash"></i></a> ';
     td.append(edit).append(trash);
     tr.append(td);
 }
