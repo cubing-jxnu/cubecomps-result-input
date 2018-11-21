@@ -182,7 +182,7 @@
                 var competitions = JSON.parse(localStorage.getItem('competitions'));
                 console.log(competitions);
                 var length = competitions.length;
-                competitions[length] = {"id":"2018JXNUCubingCup","name":"2018Cubing校园赛","date":"2018-11-18","events":[{id:"333",format:"a",roundtype:["1","f"],},{id:"sq1",format:"a",roundtype:"f",},{id:"333bf",format:"m",roundtype:"f",},],"players":[{"id":1,"name":"吴健坤","events":["333","sq1","333bf"],},],"results":[{"event":"333","player_id":1,"player_name":"吴健坤","roundtype":"f","format":"a","val":["0.01","0.02","0.03","0.04","0.05"],"single":"0.01","average":"0.03","rank":1,},],};
+                competitions[length] = {"id":"2018JXNUCubingCup","name":"2018Cubing杯校园赛","date":"2018-11-18","events":[{id:"333",format:"a",roundtype:["1","f"],},{id:"sq1",format:"a",roundtype:"f",},{id:"333bf",format:"m",roundtype:"f",},],"players":[{"id":1,"name":"吴健坤","events":["333","sq1","333bf"],},],"results":[{"event":"333","player_id":1,"player_name":"吴健坤","roundtype":"f","format":"a","val":["0.01","0.02","0.03","0.04","0.05"],"single":"0.01","average":"0.03","rank":1,},],};
                 console.log(competitions);
                 localStorage.competitions=JSON.stringify(competitions);
             }

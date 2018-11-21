@@ -24,7 +24,7 @@ $(document).ready(function(){
          * 5.操作选项
          */
         tr.append($("<td></td>").append($("<input>").attr('type','checkbox')));
-        tr.append($("<td></td>").text(competition_id));
+        tr.append($("<td></td>").text(competition_date));
         tr.append($("<td></td>").text(competition_name));
         fillEvents(tr,competition_events);
         fillOptionTd(tr);
@@ -53,7 +53,7 @@ function fillEvents(tr,competition_events) {
 
         for(var j = 0; j < EVENTS.length; j++) {
             if (EVENTS[j]['id'] == competition_events[i]['id']) {
-                var icon = '<div class="inline-block"><span data-toggle="tooltip" class="cubing-icon event-'+EVENTS[j]['id']+'" title="'+EVENTS[j]['name']+'"></div>'
+                var icon = '<div class="inline-block"><span data-toggle="tooltip" class="cubing-icon event-'+EVENTS[j]['id']+'" title="'+EVENTS[j]['name']+'"></div> '
                 td.append(icon);
             }
         }
