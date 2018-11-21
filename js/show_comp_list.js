@@ -63,21 +63,21 @@ function fillEvents(tr,competition_events) {
 }
 
 function getCompId(competitions) {
-     var competition_id = competitions['id'];
-     /**
-      * 占位符
-      * 对 competition_id 做去空格 转-字符处理
-      */
-     return competition_id;
+    var competition_id = competitions['id'];
+    /**
+    * 占位符
+    * 对 competition_id 做去空格 转-字符处理
+    */
+    return competition_id;
 } 
 
 function getCompName(competitions) {
-     var competition_name = competitions['name'];
-     /**
-      * 占位符
-      * 对 competition_name 做去空格处理
-      */
-     return competition_name;
+    var competition_name = competitions['name'];
+    /**
+    * 占位符
+    * 对 competition_name 做去空格处理
+    */
+    return competition_name;
 } 
 
 function getCompEvents(competitions) {
