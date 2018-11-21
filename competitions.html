@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" sizes="256x256" href="./images/icon.png">
+    <link rel="apple-touch-icon" href="./images/icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="./images/icon.png">
+    <title>赛事列表 - 魔方赛事成绩录入工具</title>
+    <script src="https://use.fontawesome.com/4d11ec76b3.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+          integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <!-- Styles -->
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="cubing-icon.css">
+    <style>
+        a:hover {
+            text-decoration: none;
+        }
+        .page-header {
+            margin-bottom: 10px;
+            padding-bottom: 0px; 
+        }
+        .inline-block {
+            display: inline-block;
+        }
+        .no-wrap {
+            white-space: nowrap;
+        }
+        .table-options {
+            width: 100%;
+            height: 35px;
+        }
+        .must {
+            color: #f11;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div id="app">
+    <script src="./_nav.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <!-- 赛事列表 -->
+            <div class="col-md-12">
+
+                <!-- 页面标题 -->
+                <div class="page-header">
+                    <h2>赛事列表 <span class="small">Competition List</span>
+                    </h2>
+                </div>
+
+                <div class="table-options">
+                    <input id="select-all" class="" type="checkbox">
+                    <label for="select-all">全选</label>
+                    <div class="btn-group">
+                        <button class="btn btn-sm btn-default">操作</button><button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                 <a href="#"><i class="glyphicon glyphicon-trash"></i> 删除</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <botton type="button" class="btn btn-sm btn-primary" onclick="window.location.reload();"><i class="glyphicon glyphicon-refresh"></i> 刷新</botton>
+                    <span class="pull-right">
+                        <button type="button" class="btn btn-sm btn-danger" onclick="test()">新增赛事(测试)</button>
+                        <button id="create-compe-link" href="#create-compe-modal" type="button" class="btn btn-sm btn-success" data-toggle="modal">新增赛事</button>
+                        <div class="clear-fix"></div>
+                    </span>
+                </div>
+                <!-- 列表表格 -->
+                <div class="table-responsive">
+                    <table id="comp-table" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>日期</th>
+                                <th>比赛名称</th>
+                                <th>开设项目</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox">
+                                </td>
+                                <td class="no-wrap">2018-11-18</td>
+                                <td class="no-wrap">2018Cubing杯校园赛</td>
+                                <td class="">
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-333" title="三阶速拧"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-222" title="二阶速拧"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-444" title="四阶速拧"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-555" title="五阶速拧"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-666" title="六阶速拧"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-777" title="七阶速拧"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-333oh" title="三阶单手"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-333bf" title="三阶盲拧"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-333ft" title="三阶脚拧"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-333fm" title="最少步"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-clock" title="魔表"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-pyram" title="金字塔"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-skewb" title="斜转"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-sq1" title="Squre-1"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-minx" title="五魔方"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-444bf" title="四阶盲拧"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-555bf" title="五阶盲拧"></div>
+                                    <div class="inline-block"><span data-toggle="tooltip"  class="cubing-icon event-333mbf" title="三阶多盲"></div>
+                                </td>
+                                <td class="no-wrap">
+                                    <a href="">
+                                        <i class="glyphicon glyphicon-edit"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+        </div>
+    </div>
+
+    <!-- 创建赛事 - 模态框 -->
+    <div class="modal fade" id="create-compe-modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        新增赛事
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="comp-name">赛事名称 <span class="must">*</span></label><input type="text" class="form-control" id="comp-name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="comp-id">赛事唯一英文ID <span class="must">*</span></label><input type="text" class="form-control" id="comp-id" />
+                            <span class="help-block small"><span class="text-warning">请按 <code>赛事英文译名+年份</code> 的格式命名，不允许出现空格，空格将转化为 <code>-</code> 。例如：<code>JXNUCubingCup2018</code></span></span>
+                        </div>
+                        <div class="form-group">
+                             <label for="exampleInputFile">比赛日期</label>
+                             <p>日期</p>
+                        </div>
+                        <div class="form-group">
+                             <label><input type="checkbox" />三阶</label>
+                             <label><input type="checkbox" />四阶</label>
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button> <button type="button" class="btn btn-primary">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="./js/Events.js"></script>
+    <script src="./js/_show_comp_list.js"></script>
+    <script>
+        $(function () {
+            $("[data-toggle='tooltip']").tooltip();
+        });
+        function test() {
+            if (localStorage.competitions == null) {
+                localStorage.competitions=JSON.stringify([{"id":"2018JXNUCubingCup","name":"2018Cubing校园赛","date":"2018-11-18","events":[{id:"333",format:"a",roundtype:["1","f"],},{id:"sq1",format:"a",roundtype:"f",},{id:"333bf",format:"m",roundtype:"f",},],"players":[{"id":1,"name":"吴健坤","events":["333","sq1","333bf"],},],"results":[{"event":"333","player_id":1,"player_name":"吴健坤","roundtype":"f","format":"a","val":["0.01","0.02","0.03","0.04","0.05"],"single":"0.01","average":"0.03","rank":1,},],},]);
+            } else {
+                var competitions = JSON.parse(localStorage.getItem('competitions'));
+                console.log(competitions);
+                var length = competitions.length;
+                competitions[length] = {"id":"2018JXNUCubingCup","name":"2018Cubing校园赛","date":"2018-11-18","events":[{id:"333",format:"a",roundtype:["1","f"],},{id:"sq1",format:"a",roundtype:"f",},{id:"333bf",format:"m",roundtype:"f",},],"players":[{"id":1,"name":"吴健坤","events":["333","sq1","333bf"],},],"results":[{"event":"333","player_id":1,"player_name":"吴健坤","roundtype":"f","format":"a","val":["0.01","0.02","0.03","0.04","0.05"],"single":"0.01","average":"0.03","rank":1,},],};
+                console.log(competitions);
+                localStorage.competitions=JSON.stringify(competitions);
+            }
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>
