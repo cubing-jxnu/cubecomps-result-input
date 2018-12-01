@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" sizes="256x256" href="./images/icon.png">
+    <link rel="apple-touch-icon" href="./images/icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="./images/icon.png">
+    <title>赛事列表 - 魔方赛事成绩录入工具</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="cubing-icon.css">
+    <style>
+        a:hover {
+            text-decoration: none;
+        }
+        .page-header {
+            margin-bottom: 10px;
+            padding-bottom: 0px; 
+        }
+        .inline-block {
+            display: inline-block;
+        }
+        .no-wrap {
+            white-space: nowrap;
+        }
+        .table-options {
+            width: 100%;
+            height: 35px;
+        }
+        .must {
+            color: #f11;
+        }
+        .valign-middle {
+            vertical-align: -webkit-baseline-middle;
+        }
+        .btn-delete {
+            font-size: 1.1em;
+            color: #ff6363;
+        }
+        .btn-delete:hover {
+            color: #ff0000;
+        }
+    </style>
+    <!-- Scripts -->
+    <script src="bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="./js/Events.js"></script>
+    <script src="./js/Players.js"></script>
+</head>
+<body>
+
+
+<div id="app">
+    <!-- 导航 -->
+    <script src="./js/nav.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- 页面标题 -->
+                <div class="page-header">
+                    <h2>成绩录入 <span class="small">Result Input</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                
+
+                <div class="inputBox">
+                    <div id="infoForm" action="" method="post">
+                        <h3>输入面板</h3>
+                        
+                            <div class="form-group has-success">
+                                <label class="control-label">姓名</label>
+                                <input id="playerName" type="text" class="form-control" >
+                            </div>
+                            <label  class="control-label" for="eventsBox">参赛项目</label>
+                            <div id="eventsBox" class="checkbox">
+                            </div>
+                            <!--  -->
+
+
+                        <input id="clearform" type="button" class="btn btn-warning" value="清空">
+                        <input id="submit" type="button" class="btn btn-primary" value="提交">
+                        <!-- <input id="" type="submit" class="btn btn-danger" value="提交"> -->
+                        <div id="alertTip" class="alert"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 基本信息 -->
+            <div class="col-md-10">
+                <h3>成绩列表</h3>
+                <table id="result" class="table table-bordered table-hover table-responsive text-nowrap" style="font-family: 微软雅黑;">
+                    <thead>
+                        <tr class="info">
+                            <th>编号</th>
+                            <th>姓名</th>
+                            <th>操作  </th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="playersTable">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+  
+    <!-- Scripts -->
+
+    <script src="./js/addPlayer.js"></script>
+    <script>
+        // competitions_init.js
+        $(function () {
+            $("[data-toggle='tooltip']").tooltip();
+
+          
+        });
+    </script>
+</body>
+</html>
