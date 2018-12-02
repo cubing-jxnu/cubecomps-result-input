@@ -40,7 +40,7 @@ $(document).ready(function(){
         td.append('<label><input type="checkbox" value="">初赛</span></label>'); 
         td.append('<label><input type="checkbox" value="">复赛</span></label>'); 
         td.append('<label><input type="checkbox" value="">决赛</span></label>'); 
-        tr.append(td);
+        // tr.append(td);
         console.log("添加赛制成功");
         //添加计数规则
         var select = $("<select></select>").addClass("form-control");
