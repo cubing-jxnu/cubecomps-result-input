@@ -1,4 +1,4 @@
-var COMPETITIONS = [
+const COMPETITION = [
 	{
 		"id":"2018NHUSchoolCubingCup",
 		"name":"2018南昌航空大学校园魔方赛",

@@ -1,4 +1,4 @@
-// competitions_init.js
+// boot tooltips
 $(function () {
     $("[data-toggle='tooltip']").tooltip();
 });

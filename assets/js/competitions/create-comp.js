@@ -5,7 +5,7 @@ $(document).ready(function(){
 
         //保存赛事信息
         if (localStorage.competitions == null) {
-            localStorage.competitions=JSON.stringify(COMPETITIONS);
+            localStorage.competitions=JSON.stringify(COMPETITION);
             // localStorage.competitions=JSON.stringify([{"id":"2018NHUSchoolCubingCup","name":"2018南昌航空大学校园魔方赛","date":"2018-12-2","events":[{"id":"333","format":"a","roundtype":["1","f"],},{"id":"222","format":"a","roundtype":"f",},{"id":"pyram","format":"m","roundtype":"f",},],"players":[],"results":[]}]);
         } else {
             var competitions = JSON.parse(localStorage.getItem('competitions'));

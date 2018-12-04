@@ -1,4 +1,4 @@
-var PLAYERS = [
+const PLAYERS = [
 	{
 		"id": 1,
 		"name": "吴健坤",

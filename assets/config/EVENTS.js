@@ -1,4 +1,4 @@
-var EVENTS = [
+const EVENTS = [
       {
             'id': '333',
             'name': '三阶速拧',
@@ -66,7 +66,7 @@ var EVENTS = [
       },
       {
             'id': 'sq1',
-            'name': 'Squre-1',
+            'name': 'Square-1',
             'priority': 140,
       },
       {

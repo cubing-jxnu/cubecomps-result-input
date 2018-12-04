@@ -12,57 +12,19 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../frameworks/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/cubing-icon.css">
-    <style>
-        a:hover {
-            text-decoration: none;
-        }
-
-        .page-header {
-            margin-bottom: 10px;
-            padding-bottom: 0px;
-        }
-
-        .inline-block {
-            display: inline-block;
-        }
-
-        .no-wrap {
-            white-space: nowrap;
-        }
-
-        .table-options {
-            width: 100%;
-            height: 35px;
-        }
-
-        .must {
-            color: #f11;
-        }
-
-        .valign-middle {
-            vertical-align: -webkit-baseline-middle;
-        }
-
-        .btn-delete {
-            font-size: 1.1em;
-            color: #ff6363;
-        }
-
-        .btn-delete:hover {
-            color: #ff0000;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/competitions.css">
     <!-- Scripts -->
     <script src="../frameworks/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
     <script src="../frameworks/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script src="../assets/config/Events.js"></script>
-    <script src="../assets/js/competitions/Competitions.js"></script>
+    <!-- Competitions Config Files -->
+    <script src="../assets/config/EVENTS.js"></script>
+    <script src="../assets/config/COMPETITION.js"></script>
 </head>
 <body>
 
 
 <div id="app">
-    <script src="../assets/js/layouts/nav.js"></script>
+    <script src="../assets/js/layouts/navbar.js"></script>
 
     <div class="container">
         <div class="row">
@@ -128,7 +90,7 @@
                 </div>
                 <div class="modal-body">
                     <form role="form">
-                        <div class="form-group" action="">
+                        <div class="form-group">
                             <label for="comp-name">赛事名称 <span class="must">*</span></label>
                             <input type="text" class="form-control" id="comp-name"/>
                         </div>
@@ -138,7 +100,7 @@
                             <span class="help-block small"><span class="text-warning">请按 <code>赛事英文译名+年份</code> 的格式命名，不允许出现空格，空格将转化为 <code>-</code> 。例如：<code>JXNUCubingCup2018</code></span></span>
                         </div>
                         <div class="form-group">
-                            <label for="">比赛日期 <span class="must">*</span></label>
+                            <label>比赛日期 <span class="must">*</span></label>
                             <div class="input-group">
                                 <input type="text" class="form-control" id="Y">
                                 <div class="input-group-addon">年</div>
@@ -146,10 +108,11 @@
                                 <div class="input-group-addon">月</div>
                                 <input type="text" class="form-control" id="D">
                                 <div class="input-group-addon">日</div>
+                                <div class="input-group-addon"></div>
                             </div>
                         </div>
                         <div class="form-group" id="event-options">
-                            <label for="">开设项目 <span class="must">*</span></label>
+                            <label for="create_comp_form">开设项目 <span class="must">*</span></label>
                             <div class="table-responsive">
                                 <table id="create_comp_form" class="table table-bordered">
                                     <thead>
@@ -185,13 +148,14 @@
     </div>
 
     <!-- Scripts -->
-    <script src="../assets/js/competitions/show_comp_list.js"></script>
-    <script src="../assets/js/competitions/create_comp.js"></script>
+    <script src="../assets/js/competitions/show-comp-list.js"></script>
+    <script src="../assets/js/competitions/create-comp.js"></script>
+    <script src="../assets/js/helper/boot-tooltip.js"></script>
     <script>
-        // competitions_init.js
+        // init competitions
         $(function () {
-            for (var i = 0; i < EVENTS.length; i++) {
-                var checkbox = '<span class="cubing-icon event-' + EVENTS[i]['id'] + '"> ' + EVENTS[i]['name'] + '</span> ';
+            for (let i = 0; i < EVENTS.length; i++) {
+                let checkbox = '<span class="cubing-icon event-' + EVENTS[i]['id'] + '"> ' + EVENTS[i]['name'] + '</span> ';
                 $("#msg-confirm").append(checkbox);
             }
         });
