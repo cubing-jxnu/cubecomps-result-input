@@ -12,7 +12,7 @@ document.writeln("                    <span class=\'icon-bar\'></span>");
 document.writeln("                </button>");
 document.writeln("");
 document.writeln("                <!-- Brand -->");
-document.writeln("                <a class=\'navbar-brand\' href=\'./index.html\' title=\'魔方赛事成绩录入工具(Cube Competitions Result Input Tools)\'>");
+document.writeln("                <a class=\'navbar-brand\' href=\'../index.html\' title=\'魔方赛事成绩录入工具(Cube Competitions Result Input Tools)\'>");
 document.writeln("                    <span class=\'glyphicon glyphicon-home\'></span> CCRIT");
 document.writeln("                </a>");
 document.writeln("            </div>");

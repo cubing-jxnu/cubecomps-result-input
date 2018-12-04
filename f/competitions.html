@@ -5,55 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" sizes="256x256" href="./images/icon.png">
-    <link rel="apple-touch-icon" href="./images/icon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="./images/icon.png">
+    <link rel="icon" sizes="256x256" href="../assets/images/icon.png">
+    <link rel="apple-touch-icon" href="../assets/images/icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="../assets/images/icon.png">
     <title>赛事列表 - 魔方赛事成绩录入工具</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="cubing-icon.css">
+    <link rel="stylesheet" href="../frameworks/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/cubing-icon.css">
     <style>
         a:hover {
             text-decoration: none;
         }
+
         .page-header {
             margin-bottom: 10px;
-            padding-bottom: 0px; 
+            padding-bottom: 0px;
         }
+
         .inline-block {
             display: inline-block;
         }
+
         .no-wrap {
             white-space: nowrap;
         }
+
         .table-options {
             width: 100%;
             height: 35px;
         }
+
         .must {
             color: #f11;
         }
+
         .valign-middle {
             vertical-align: -webkit-baseline-middle;
         }
+
         .btn-delete {
             font-size: 1.1em;
             color: #ff6363;
         }
+
         .btn-delete:hover {
             color: #ff0000;
         }
     </style>
     <!-- Scripts -->
-    <script src="bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script src="./js/Events.js"></script>
+    <script src="../frameworks/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
+    <script src="../frameworks/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../assets/config/Events.js"></script>
 </head>
 <body>
 
 
 <div id="app">
-    <script src="./js/nav.js"></script>
+    <script src="../assets/js/layouts/nav.js"></script>
 
     <div class="container">
         <div class="row">
@@ -70,14 +78,18 @@
                     <input id="select-all" class="" type="checkbox">
                     <label for="select-all">全选</label>
                     <div class="btn-group">
-                        <button class="btn btn-sm btn-default">操作</button><button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><span class="caret"></span></button>
+                        <button class="btn btn-sm btn-default">操作</button>
+                        <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><span
+                                class="caret"></span></button>
                         <ul class="dropdown-menu">
                             <li>
-                                 <a href="#"><i class="glyphicon glyphicon-trash"></i> 删除</a>
+                                <a href="#"><i class="glyphicon glyphicon-trash"></i> 删除</a>
                             </li>
                         </ul>
                     </div>
-                    <botton type="button" class="btn btn-sm btn-primary" onclick="window.location.reload();"><i class="glyphicon glyphicon-refresh"></i> 刷新</botton>
+                    <botton type="button" class="btn btn-sm btn-primary" onclick="window.location.reload();">
+                        <i class="glyphicon glyphicon-refresh"></i> 刷新
+                    </botton>
                     <span class="pull-right">
                         <button id="create-compe-link" href="#create-compe-modal" type="button" class="btn btn-sm btn-success" data-toggle="modal">新增赛事</button>
                         <div class="clear-fix"></div>
@@ -87,19 +99,19 @@
                 <div class="table-responsive">
                     <table id="comp-table" class="table table-bordered table-hover">
                         <thead>
-                            <tr>
-                                <th></th>
-                                <th>日期</th>
-                                <th>比赛名称</th>
-                                <th>开设项目</th>
-                                <th>操作</th>
-                            </tr>
+                        <tr>
+                            <th></th>
+                            <th>日期</th>
+                            <th>比赛名称</th>
+                            <th>开设项目</th>
+                            <th>操作</th>
+                        </tr>
                         </thead>
                         <tbody>
                         </tbody>
                     </table>
                 </div>
-            </div>    
+            </div>
         </div>
     </div>
 
@@ -108,7 +120,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title" id="myModalLabel">
                         新增赛事
                     </h4>
@@ -116,20 +128,22 @@
                 <div class="modal-body">
                     <form role="form">
                         <div class="form-group" action="">
-                            <label for="comp-name">赛事名称 <span class="must">*</span></label><input type="text" class="form-control" id="comp-name" />
+                            <label for="comp-name">赛事名称 <span class="must">*</span></label>
+                            <input type="text" class="form-control" id="comp-name"/>
                         </div>
                         <div class="form-group">
-                            <label for="comp-id">赛事唯一英文ID <span class="must">*</span></label><input type="text" class="form-control" id="comp-id" />
+                            <label for="comp-id">赛事唯一英文ID <span class="must">*</span></label>
+                            <input type="text" class="form-control" id="comp-id"/>
                             <span class="help-block small"><span class="text-warning">请按 <code>赛事英文译名+年份</code> 的格式命名，不允许出现空格，空格将转化为 <code>-</code> 。例如：<code>JXNUCubingCup2018</code></span></span>
                         </div>
                         <div class="form-group">
                             <label for="">比赛日期 <span class="must">*</span></label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="">
+                                <input type="text" class="form-control" id="Y">
                                 <div class="input-group-addon">年</div>
-                                <input type="text" class="form-control" id="">
+                                <input type="text" class="form-control" id="M">
                                 <div class="input-group-addon">月</div>
-                                <input type="text" class="form-control" id="" >
+                                <input type="text" class="form-control" id="D">
                                 <div class="input-group-addon">日</div>
                             </div>
                         </div>
@@ -138,48 +152,49 @@
                             <div class="table-responsive">
                                 <table id="create_comp_form" class="table table-bordered">
                                     <thead>
-                                        <tr>
-                                            <td style="min-width: 45px;">操作</td>
-                                            <td>项目名称</td>
-                                            <!-- <td>轮次</td> -->
-                                            <td>计数规则</td>
-                                        </tr>
+                                    <tr>
+                                        <td style="min-width: 45px;">操作</td>
+                                        <td>项目名称</td>
+                                        <!-- <td>轮次</td> -->
+                                        <td>计数规则</td>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td colspan="4" class="text-center">
-                                                <button id="addEvent" type="button" class="btn btn-success btn-block btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td colspan="4" class="text-center">
+                                            <button id="addEvent" type="button" class="btn btn-success btn-block btn-sm">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
-                 
+
                         </div>
                         <div id="msg-confirm" class="alert alert-info" role="alert"><strong>确认开设项目：</strong><br></div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                     <button type="submit" class="btn btn-primary" id="submit">确认</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-primary" id="submit">确认</button>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Scripts -->
-    <script src="./js/show_comp_list.js"></script>
-    <script src="./js/create_comp.js"></script>
+    <script src="../assets/js/competitions/show_comp_list.js"></script>
+    <script src="../assets/js/competitions/create_comp.js"></script>
     <script>
         // competitions_init.js
         $(function () {
-            $("[data-toggle='tooltip']").tooltip();
-
             for (var i = 0; i < EVENTS.length; i++) {
                 var checkbox = '<span class="cubing-icon event-' + EVENTS[i]['id'] + '"> ' + EVENTS[i]['name'] + '</span> ';
                 $("#msg-confirm").append(checkbox);
             }
         });
     </script>
+</div>
 </body>
 </html>
