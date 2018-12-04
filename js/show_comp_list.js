@@ -27,7 +27,7 @@ $(document).ready(function(){
         tr.append($("<td></td>").text(competition_date));
         tr.append($("<td></td>").text(competition_name));
         fillEvents(tr,competition_events);
-        fillOptionTd(tr);
+        fillOptionTd(tr, competition_id);
         tbody.append( tr );
     }
 });
@@ -35,12 +35,27 @@ $(document).ready(function(){
 /**
  * 创建操作选项icon图标并放置于td中
  */
-function fillOptionTd(tr) {
+function fillOptionTd(tr, comp_id) {
     var td = $("<td></td>").addClass('no-wrap');
     var edit = '<a href=""><i class="glyphicon glyphicon-edit"></i></a> ';
+    var player = '<a href="./addPlayer.html" value=\"' + comp_id + '\" onclick="modifyCurrentCompetiton(\''+ comp_id + '\', \'\')"><i class="glyphicon glyphicon-user"></i></a> ';
     var trash = '<a href=""><i class="glyphicon glyphicon-trash"></i></a> ';
-    td.append(edit).append(trash);
+    td.append(edit).append(player).append(trash);
     tr.append(td);
+}
+
+/**
+ * 修改当前正在进行的比赛
+ */
+function modifyCurrentCompetiton(comp_id, event_id){
+    console.log("修改当前比赛");
+    var current = JSON.parse(localStorage.getItem('current'));
+    // if(current.comptition != ''){
+    //     alert("当前有比赛正在进行")
+    // }
+    current.competition = comp_id;
+    current.resultInputEvent = event_id;
+    localStorage.current = JSON.stringify(current);
 }
 
 /**

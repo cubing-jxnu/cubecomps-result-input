@@ -11,13 +11,9 @@ $(document).ready(function(){
 				name = EVENTS[i].name;
 			}
 		}
-		var input = '<input type="checkbox" value="'+id+'"> '+name;
+		var input = '<input type="checkbox" class="eventChecked" value="'+id+'"> '+name;
 		$("#eventsBox").append($("<label></label>").append(input));
 	}
-
-	
-
-
 
 });
 
@@ -36,8 +32,21 @@ $("#submit").click(function () {
 	var newPlayer = {};
 	newPlayer.id=length+1;
 	newPlayer.name = $("#playerName").val();
-	newPlayer.events = ["333"];
-	console.log(newPlayer);
+	newPlayer.events = [];
+
+	//判断选中了哪些项目
+	var eventChecked = $(".eventChecked:checked");
+	if(eventChecked.length <= 0){
+		alert("请勾选项目");
+		return;
+	}
+	for(var i = 0; i < eventChecked.length; i++){
+		console.log(eventChecked[i]);
+		if(eventChecked.prop('checked')){
+			newPlayer.events[newPlayer.events.length] = $(eventChecked[i]).val();
+		}
+	}
+	// console.log(newPlayer);
 	competitions[0].players[length] = newPlayer;
 
 
@@ -55,7 +64,24 @@ function freshPlayers(){
 	for(var i = 0; i < competitions[0].players.length; i++){
 		var player = competitions[0].players[i];
 		var option = "<td><button class='btn btn-sm btn-del btn-danger' onclick='removePlayer(this)' value="+ i+" >删除</td>";
-		$("#playersTable").append("<tr><td>" + player.id + "</td><td>" + player.name + "</td>" + option + "</tr>");
+		
+		//显示选手报名的项目
+		var playerEvent ="<td>";
+		for(var j = 0; j < player.events.length; j++){
+			// playerEvent += player.events[j];
+			// if(j != player.events.length - 1){
+			// 	playerEvent += ', ';
+			// }
+			for(var k = 0; k < EVENTS.length; k++) {
+	            if (EVENTS[k]['id'] == player.events[j]) {
+	                var icon = '<div class="inline-block"><span data-toggle="tooltip" class="cubing-icon event-'+EVENTS[k]['id']+'" title="'+EVENTS[k]['name']+'"></div> ';
+	                // td.append(icon);
+	                playerEvent += icon;
+	            }
+        	}
+		}
+		playerEvent += "</td>";
+		$("#playersTable").append("<tr><td>" + player.id + "</td><td>" + player.name + "</td>" + playerEvent + option + "</tr>");
 	}
 
 
@@ -73,7 +99,7 @@ function removePlayer(e) {
 	for (let i = index; i < length; i++) {
 		competitions[0].players[i].id--;
 	}
-	console.log("player " + index + " has been deleted.");
+	// console.log("player " + index + " has been deleted.");
 	localStorage.competitions = JSON.stringify(competitions);
 	//刷新
 	freshPlayers();

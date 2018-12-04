@@ -63,7 +63,7 @@ function nextResultInput(thisInput) {
 
     if ($(thisInput).attr('id') == $("#player-score-" + (5 -1)).attr('id')) {
         scoring('333', 'a', $(".player-scores"));
-        flashRank();
+        freshRank();
     }
 }
 function scoring(event, format, scores){
@@ -132,7 +132,7 @@ function scoring(event, format, scores){
     return bestAndAverage;
 }
 
-function flashRank(){
+function freshRank(){
     var scoreItems = $("#result-body tr");
     for (var i = 0; i < scoreItems.length; i++){
         // console.log(scoreItems[i]);
