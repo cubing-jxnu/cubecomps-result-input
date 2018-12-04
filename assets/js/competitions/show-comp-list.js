@@ -38,7 +38,7 @@ $(document).ready(function(){
 function fillOptionTd(tr, comp_id) {
     var td = $("<td></td>").addClass('no-wrap');
     var edit = '<a href=""><i class="glyphicon glyphicon-edit"></i></a> ';
-    var player = '<a href="./addPlayer.html" value=\"' + comp_id + '\" onclick="modifyCurrentCompetiton(\''+ comp_id + '\', \'\')"><i class="glyphicon glyphicon-user"></i></a> ';
+    var player = '<a href="./player-register.html" value=\"' + comp_id + '\" onclick="modifyCurrentCompetiton(\''+ comp_id + '\', \'\')"><i class="glyphicon glyphicon-user"></i></a> ';
     var trash = '<a href=""><i class="glyphicon glyphicon-trash"></i></a> ';
     td.append(edit).append(player).append(trash);
     tr.append(td);

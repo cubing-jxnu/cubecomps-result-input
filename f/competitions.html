@@ -22,135 +22,135 @@
 </head>
 <body>
     <div id="app">
-    <!-- 导航 -->
-    <script src="../assets/js/layouts/navbar.js"></script>
+        <!-- 导航 -->
+        <script src="../assets/js/layouts/navbar.js"></script>
 
-    <div class="container">
-        <div class="row">
-            <!-- 赛事列表 -->
-            <div class="col-md-12">
+        <div class="container">
+            <div class="row">
+                <!-- 赛事列表 -->
+                <div class="col-md-12">
 
-                <!-- 页面标题 -->
-                <div class="page-header">
-                    <h2>赛事列表 <span class="small">Competition List</span>
-                    </h2>
-                </div>
-
-                <div class="table-options">
-                    <input id="select-all" class="" type="checkbox">
-                    <label for="select-all">全选</label>
-                    <div class="btn-group">
-                        <button class="btn btn-sm btn-default">操作</button>
-                        <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><span
-                                class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#"><i class="glyphicon glyphicon-trash"></i> 删除</a>
-                            </li>
-                        </ul>
+                    <!-- 页面标题 -->
+                    <div class="page-header">
+                        <h2>赛事列表 <span class="small">Competition List</span>
+                        </h2>
                     </div>
-                    <botton type="button" class="btn btn-sm btn-primary" onclick="window.location.reload();">
-                        <i class="glyphicon glyphicon-refresh"></i> 刷新
-                    </botton>
-                    <span class="pull-right">
-                        <button id="create-compe-link" href="#create-compe-modal" type="button" class="btn btn-sm btn-success" data-toggle="modal">新增赛事</button>
-                        <div class="clear-fix"></div>
-                    </span>
-                </div>
-                <!-- 列表表格 -->
-                <div class="table-responsive">
-                    <table id="comp-table" class="table table-bordered table-hover">
-                        <thead>
-                        <tr>
-                            <th></th>
-                            <th>日期</th>
-                            <th>比赛名称</th>
-                            <th>开设项目</th>
-                            <th>操作</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+
+                    <div class="table-options">
+                        <input id="select-all" class="" type="checkbox">
+                        <label for="select-all">全选</label>
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-default">操作</button>
+                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><span
+                                    class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#"><i class="glyphicon glyphicon-trash"></i> 删除</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <botton type="button" class="btn btn-sm btn-primary" onclick="window.location.reload();">
+                            <i class="glyphicon glyphicon-refresh"></i> 刷新
+                        </botton>
+                        <span class="pull-right">
+                            <button id="create-compe-link" href="#create-compe-modal" type="button" class="btn btn-sm btn-success" data-toggle="modal">新增赛事</button>
+                            <div class="clear-fix"></div>
+                        </span>
+                    </div>
+                    <!-- 列表表格 -->
+                    <div class="table-responsive">
+                        <table id="comp-table" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>日期</th>
+                                <th>比赛名称</th>
+                                <th>开设项目</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 创建赛事 - 模态框 -->
-    <div class="modal fade" id="create-compe-modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        新增赛事
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <form role="form">
-                        <div class="form-group">
-                            <label for="comp-name">赛事名称 <span class="must">*</span></label>
-                            <input type="text" class="form-control" id="comp-name"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="comp-id">赛事唯一英文ID <span class="must">*</span></label>
-                            <input type="text" class="form-control" id="comp-id"/>
-                            <span class="help-block small"><span class="text-warning">请按 <code>赛事英文译名+年份</code> 的格式命名，不允许出现空格，空格将转化为 <code>-</code> 。例如：<code>JXNUCubingCup2018</code></span></span>
-                        </div>
-                        <div class="form-group">
-                            <label>比赛日期 <span class="must">*</span></label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="Y">
-                                <div class="input-group-addon">年</div>
-                                <input type="text" class="form-control" id="M">
-                                <div class="input-group-addon">月</div>
-                                <input type="text" class="form-control" id="D">
-                                <div class="input-group-addon">日</div>
-                                <div class="input-group-addon"></div>
+        <!-- 创建赛事 - 模态框 -->
+        <div class="modal fade" id="create-compe-modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            新增赛事
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="comp-name">赛事名称 <span class="must">*</span></label>
+                                <input type="text" class="form-control" id="comp-name"/>
                             </div>
-                        </div>
-                        <div class="form-group" id="event-options">
-                            <label for="create_comp_form">开设项目 <span class="must">*</span></label>
-                            <div class="table-responsive">
-                                <table id="create_comp_form" class="table table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <td style="min-width: 45px;">操作</td>
-                                        <td>项目名称</td>
-                                        <!-- <td>轮次</td> -->
-                                        <td>计数规则</td>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td colspan="4" class="text-center">
-                                            <button id="addEvent" type="button" class="btn btn-success btn-block btn-sm">
-                                                <span class="glyphicon glyphicon-plus"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            <div class="form-group">
+                                <label for="comp-id">赛事唯一英文ID <span class="must">*</span></label>
+                                <input type="text" class="form-control" id="comp-id"/>
+                                <span class="help-block small"><span class="text-warning">请按 <code>赛事英文译名+年份</code> 的格式命名，不允许出现空格，空格将转化为 <code>-</code> 。例如：<code>JXNUCubingCup2018</code></span></span>
                             </div>
+                            <div class="form-group">
+                                <label>比赛日期 <span class="must">*</span></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="Y">
+                                    <div class="input-group-addon">年</div>
+                                    <input type="text" class="form-control" id="M">
+                                    <div class="input-group-addon">月</div>
+                                    <input type="text" class="form-control" id="D">
+                                    <div class="input-group-addon">日</div>
+                                    <div class="input-group-addon"></div>
+                                </div>
+                            </div>
+                            <div class="form-group" id="event-options">
+                                <label for="create_comp_form">开设项目 <span class="must">*</span></label>
+                                <div class="table-responsive">
+                                    <table id="create_comp_form" class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <td style="min-width: 45px;">操作</td>
+                                            <td>项目名称</td>
+                                            <!-- <td>轮次</td> -->
+                                            <td>计数规则</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td colspan="4" class="text-center">
+                                                <button id="addEvent" type="button" class="btn btn-success btn-block btn-sm">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
 
-                        </div>
-                        <div id="msg-confirm" class="alert alert-info" role="alert"><strong>确认开设项目：</strong><br></div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="submit" class="btn btn-primary" id="submit">确认</button>
+                            </div>
+                            <div id="msg-confirm" class="alert alert-info" role="alert"><strong>确认开设项目：</strong><br></div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary" id="submit">确认</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div><!-- end container -->
-</div><!-- end app-->
+        </div><!-- end container -->
+    </div><!-- end app-->
 
     <!-- Scripts -->
     <script src="../assets/js/competitions/show-comp-list.js"></script>
     <script src="../assets/js/competitions/create-comp.js"></script>
-    <script src="../assets/js/helper/boot-tooltip.js"></script>
+    <script src="../assets/js/helper/boot-tooltips.js"></script>
     <script>
         // init competitions
         $(function () {

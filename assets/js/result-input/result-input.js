@@ -38,7 +38,7 @@ function playerIdInput(thisInput){
     else{
         var tip = $("#alertTip");
         tip.addClass("alert-danger");
-        tip.html("未找到该选手");
+        tip.html("璇疯緭鍏ラ�夋墜缂栧彿");
     }
 }
 
@@ -49,7 +49,7 @@ function nextResultInput(thisInput) {
     var r = /^((\d{0,2})(:?)(\d{0,2})(\.?)(\d{0,3}))$/;
     if (!r.test($(thisInput).val()) || $(thisInput).val() == '') {
         // tip.addClass("alert-danger");
-        // tip.html("请按正确格式输入成绩！");
+        // tip.html("璇锋寜姝ｇ‘鏍煎紡杈撳叆鎴愮哗");
         // alert();
         return;
     }
@@ -141,16 +141,14 @@ function freshRank(){
     }
 }
 $("document").ready(function(){
-        //测试添加成绩
+        //娣诲姞鎴愮哗
         $("#submit").click(function() {
             var competitions = JSON.parse(localStorage.getItem('competitions'));
             var length = competitions[0].results.length;
-            var r = {event:"333",player_id:1,player_name:"吴健坤",roundtype:"f",format:"a",val:["0.01","0.02","0.03","0.04","0.05"],single:"0.01",average:"0.03",};
+            var r = {event:"333",player_id:1,player_name:"????",roundtype:"f",format:"a",val:["0.01","0.02","0.03","0.04","0.05"],single:"0.01",average:"0.03",};
             competitions[0].results[length] = r;
             console.log('val:["0.01","0.02","0.03","0.04","0.05"]');
             localStorage.competitions=JSON.stringify(competitions);
-
-            //成绩显示
         });
 
         $("#clearform").click(function() {
@@ -172,7 +170,7 @@ $("document").ready(function(){
         //     $("#result-body").append(newRow);
         // }
         $("#player-name").attr("readonly", "readonly");
-        $("#player-id").focus();                        //聚焦在编号框
+        $("#player-id").focus();                        //????????
         for(var i = 0; i < 5; i++){
             $("#player-score-" + i).attr("readonly","readonly");
         }
@@ -193,13 +191,13 @@ $("document").ready(function(){
          //        tip.removeClass("alert-danger");
          //    if(name_val=='' || score_val==''){
          //        tip.addClass("alert-danger")
-         //        tip.html("请将信息填写完整");
+         //        tip.html("???????锟斤拷????");
          //        return;
          //    }
          //    // var r = /^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/;
          //    // if(!r.test(score_val)){
          //    //     tip.addClass("alert-danger");
-         //    //     tip.html("请按正确格式输入成绩！");
+         //    //     tip.html("????????????????");
          //    //     return;
          //    // }
          //    //alert(name_val+score_val);
@@ -209,7 +207,7 @@ $("document").ready(function(){
          //    $("#player-name").val('');
          //    $("#player-score").val('');
          //    tip.addClass("alert-success")
-         //    tip.html("提交成功！");
+         //    tip.html("???????");
          //    sortTable();
          // });
             //console.log("this");

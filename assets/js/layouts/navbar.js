@@ -30,7 +30,7 @@ document.writeln("                            <span class=\'glyphicon glyphicon-
 document.writeln("                        </a>");
 document.writeln("                    </li>");
 document.writeln("                    <li>");
-document.writeln("                        <a class=\'\' href=\'./resultInput.html\'>");
+document.writeln("                        <a class=\'\' href=\'./result-input.html\'>");
 document.writeln("                            <span class=\'glyphicon glyphicon-import\'></span> 录入");
 document.writeln("                        </a>");
 document.writeln("                    </li>");
