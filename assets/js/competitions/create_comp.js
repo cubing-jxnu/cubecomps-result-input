@@ -5,7 +5,8 @@ $(document).ready(function(){
 
         //保存赛事信息
         if (localStorage.competitions == null) {
-            localStorage.competitions=JSON.stringify([{"id":"2018JXNUCubingCup","name":"2018Cubing杯校园赛","date":"2018-11-18","events":[{id:"333",format:"a",roundtype:["1","f"],},{id:"222",format:"a",roundtype:["1","f"],},{id:"444",format:"a",roundtype:["1","f"],},{id:"555",format:"a",roundtype:["1","f"],},{id:"666",format:"a",roundtype:["1","f"],},{id:"777",format:"a",roundtype:["1","f"],},{id:"333oh",format:"a",roundtype:["1","f"],},{id:"333bf",format:"a",roundtype:["1","f"],},{id:"333ft",format:"a",roundtype:["1","f"],},{id:"333fm",format:"a",roundtype:["1","f"],},{id:"clock",format:"a",roundtype:["1","f"],},{id:"pyram",format:"a",roundtype:["1","f"],},{id:"skewb",format:"a",roundtype:["1","f"],},{id:"sq1",format:"a",roundtype:"f",},{id:"minx",format:"m",roundtype:"f",},{id:"444bf",format:"m",roundtype:"f",},{id:"555bf",format:"m",roundtype:"f",},{id:"333mbf",format:"m",roundtype:"f",},],"players":[{"id":1,"name":"吴健坤","events":["333","sq1","333bf"],},],"results":[{"event":"333","player_id":1,"player_name":"吴健坤","roundtype":"f","format":"a","val":["0.01","0.02","0.03","0.04","0.05"],"single":"0.01","average":"0.03","rank":1,},],},]);
+            localStorage.competitions=JSON.stringify(COMPETITIONS);
+            // localStorage.competitions=JSON.stringify([{"id":"2018NHUSchoolCubingCup","name":"2018南昌航空大学校园魔方赛","date":"2018-12-2","events":[{"id":"333","format":"a","roundtype":["1","f"],},{"id":"222","format":"a","roundtype":"f",},{"id":"pyram","format":"m","roundtype":"f",},],"players":[],"results":[]}]);
         } else {
             var competitions = JSON.parse(localStorage.getItem('competitions'));
             console.log(competitions);
