@@ -1,0 +1,59 @@
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: '微软雅黑', sans-serif;
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+a {
+    color: #636b6f;
+    padding: 0 15px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    text-decoration: none;
+}
+p {
+    margin: 0 auto;
+}
+
+.wrap {
+    position: relative;
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.small {
+    color: #636b6f;
+    font-weight: 400;
+    font-size: 0.9em;
+    letter-spacing: .1em;
+}
+
+.big {
+    color: #636b6f;
+    font-weight: 400;
+    font-size: 1.1em;
+    letter-spacing: .3em;
+}
+
+.title {
+    font-family: 'Raleway',sans-serif;
+    font-weight: 100;
+    font-size: 84px;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+#GitHub {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+}

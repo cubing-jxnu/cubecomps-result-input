@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="icon" sizes="256x256" href="./images/icon.png">
-    <link rel="apple-touch-icon" href="./images/icon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="./images/icon.png">
-    <title>赛事列表 - 魔方赛事成绩录入工具</title>
+    <link rel="icon" sizes="256x256" href="../assets/images/icon.png">
+    <link rel="apple-touch-icon" href="../assets/images/icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="../assets/images/icon.png">
+    <title>成绩录入 - 魔方赛事成绩录入工具</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="cubing-icon.css">
+    <link rel="stylesheet" href="../frameworks/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/cubing-icon.css">
     <style>
         a:hover {
             text-decoration: none;
@@ -20,43 +19,18 @@
             margin-bottom: 10px;
             padding-bottom: 0px; 
         }
-        .inline-block {
-            display: inline-block;
-        }
-        .no-wrap {
-            white-space: nowrap;
-        }
-        .table-options {
-            width: 100%;
-            height: 35px;
-        }
-        .must {
-            color: #f11;
-        }
-        .valign-middle {
-            vertical-align: -webkit-baseline-middle;
-        }
-        .btn-delete {
-            font-size: 1.1em;
-            color: #ff6363;
-        }
-        .btn-delete:hover {
-            color: #ff0000;
-        }
     </style>
     <!-- Scripts -->
-    <script src="bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script src="./js/Events.js"></script>
-    <script src="./js/Players.js"></script>
-    <script src="./js/result_input.js"></script>
+    <script src="../frameworks/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
+    <script src="../frameworks/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <!-- Competitions Config Files -->
+    <script src="../assets/config/EVENTS.js"></script>
+    <script src="../assets/config/PLAYERS.js"></script>
 </head>
 <body>
-
-
-<div id="app">
+    <div id="app">
     <!-- 导航 -->
-    <script src="./js/nav.js"></script>
+    <script src="../assets/js/layouts/navbar.js"></script>
 
     <div class="container">
         <div class="row">
@@ -70,10 +44,8 @@
         </div>
         <div class="row">
             <div class="col-md-2">
-                
-
                 <div class="inputBox">
-                    <div id="infoForm" action="" method="post">
+                    <div id="infoForm">
                         <h3>输入面板</h3>
                         <div class="row">
                             <div class="form-group has-error col-md-12">
@@ -120,7 +92,6 @@
                         <div id="alertTip" class="alert"></div>
                     </div>
                 </div>
-
             </div>
 
             <!-- 基本信息 -->
@@ -168,18 +139,11 @@
                 </table>
             </div>
         </div>
-    </div>
+    </div><!-- end container -->
+</div><!-- end app-->
 
-  
     <!-- Scripts -->
-
-    <script>
-        // competitions_init.js
-        $(function () {
-            $("[data-toggle='tooltip']").tooltip();
-
-          
-        });
-    </script>
+    <script src="../assets/js/result-input/result-input.js"></script>
+    <script src="../assets/js/helper/boot-tooltip.js"></script>
 </body>
 </html>
