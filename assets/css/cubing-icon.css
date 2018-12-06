@@ -4,7 +4,9 @@
     font-weight: normal;
     font-style: normal
 }
-
+.inline-block{
+	display: inline-block;
+}
 .cubing-icon:before {
     display: inline-block;
     font-family: "cubing-icons";
