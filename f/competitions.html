@@ -10,20 +10,55 @@
     <link rel="apple-touch-icon-precomposed" sizes="128x128" href="../assets/images/icon.png">
     <title>赛事列表 - 魔方赛事成绩录入工具</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="../frameworks/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/cubing-icon.css">
-    <link rel="stylesheet" href="../assets/css/competitions.css">
+    <link rel="stylesheet" href="../vendor/node_modules/bootstrap/dist/css/bootstrap.min.css"><!-- CSS框架 -->
+    <link rel="stylesheet" href="../vendor/node_modules/zebra_datepicker/dist/css/bootstrap/zebra_datepicker.min.css"><!-- 日期选择插件样式 -->
+    <link rel="stylesheet" href="../vendor/node_modules/font-awesome/css/font-awesome.min.css"><!-- 日期选择插件样式 -->
+    <link rel="stylesheet" href="../assets/css/cubing-icon.css"><!-- 魔方图标样式 -->
+    <link rel="stylesheet" href="../assets/css/competitions.css"><!-- 自定义样式 -->
     <!-- Scripts -->
-    <script src="../frameworks/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
-    <script src="../frameworks/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../vendor/node_modules/jquery/dist/jquery.min.js"></script><!-- jQuery -->
+    <script src="../vendor/node_modules/bootstrap/dist/js/bootstrap.min.js"></script><!-- CSS框架 -->
     <!-- Competitions Config Files -->
     <script src="../assets/config/EVENTS.js"></script>
     <script src="../assets/config/COMPETITION.js"></script>
+
+    <!-- nav style -->
+    <style>
+        nav {
+            margin-top: 0;
+            border-top: 4px solid #a5d6fb;
+            box-shadow: 0 1px 11px 2px rgba(42,42,42,0.1);
+            font-size: 14px;
+        }
+        nav a {
+            color: #58a2fb;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <!-- 导航 -->
-        <script src="../assets/js/layouts/navbar.js"></script>
+        <!--<script src="../assets/js/layouts/navbar.js"></script>-->
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
+
+            <a class="navbar-brand" href="#"><span class="fa fa-cube"></span> CCRIT</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="./competitions.html" class="nav-link">赛事</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./competitions.html" class="nav-link">赛事</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
 
         <div class="container">
             <div class="row">
@@ -100,15 +135,7 @@
                             </div>
                             <div class="form-group">
                                 <label>比赛日期 <span class="must">*</span></label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="Y">
-                                    <div class="input-group-addon">年</div>
-                                    <input type="text" class="form-control" id="M">
-                                    <div class="input-group-addon">月</div>
-                                    <input type="text" class="form-control" id="D">
-                                    <div class="input-group-addon">日</div>
-                                    <div class="input-group-addon"></div>
-                                </div>
+                                <input type="text" id="comp-date" class="form-control" style="width: 100%">
                             </div>
                             <div class="form-group" id="event-options">
                                 <label for="create_comp_form">开设项目 <span class="must">*</span></label>
@@ -145,12 +172,19 @@
                 </div>
             </div>
         </div><!-- end container -->
+
+        <!-- test -->
+
+
+
+
     </div><!-- end app-->
 
     <!-- Scripts -->
     <script src="../assets/js/competitions/show-comp-list.js"></script>
     <script src="../assets/js/competitions/create-comp.js"></script>
     <script src="../assets/js/helper/boot-tooltips.js"></script>
+    <script src="../vendor/node_modules/zebra_datepicker/dist/zebra_datepicker.min.js"></script>
     <script>
         // init competitions
         $(function () {
@@ -159,6 +193,8 @@
                 $("#msg-confirm").append(checkbox);
             }
         });
+        $('#comp-date').Zebra_DatePicker();
+        $('.Zebra_DatePicker_Icon_Wrapper').css('width','100%');
     </script>
 </body>
 </html>
