@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增赛事 表单布局</title>
+
+    <link rel="stylesheet" href="../vendor/node_modules/bootstrap/dist/css/bootstrap.min.css"><!-- CSS框架 -->
+    <link rel="stylesheet" href="../vendor/node_modules/zebra_datepicker/dist/css/bootstrap/zebra_datepicker.min.css">
+    <!-- 日期选择插件样式 -->
+    <link rel="stylesheet" href="../vendor/node_modules/font-awesome/css/font-awesome.min.css"><!-- 日期选择插件样式 -->
+    <link rel="stylesheet" href="../assets/css/cubing-icon.css"><!-- 魔方图标样式 -->
+    <link rel="stylesheet" href="../assets/css/competitions.css"><!-- 自定义样式 -->
+    <!-- Scripts -->
+    <script src="../vendor/node_modules/jquery/dist/jquery.min.js"></script><!-- jQuery -->
+    <script src="../vendor/node_modules/bootstrap/dist/js/bootstrap.min.js"></script><!-- CSS框架 -->
+    <!-- Competitions Config Files -->
+    <script src="../assets/config/EVENTS.js"></script>
+    <script src="../assets/config/COMPETITION.js"></script>
+
+
+</head>
+<body>
+<div class="container">
+<div class="row">
+<!-- 赛事列表 -->
+<div class="offset-md-1 col-md-10">
+
+<!---------------- BEGIN ------------------->
+
+<form role="form">
+
+    <!-- 名称 -->
+    <div class="form-group">
+        <label for="comp-name">赛事名称 <span class="must">*</span></label>
+        <input type="text" class="form-control" id="comp-name"/>
+    </div>
+
+    <!-- id -->
+    <div class="form-group">
+        <label for="comp-id">赛事唯一英文ID <span class="must">*</span></label>
+        <input type="text" class="form-control" id="comp-id"/>
+        <span class="help-block small">
+            <span class="text-danger">请为赛事拟定一个 ID ，该 ID 只能包含 <code>英文</code> , <code>数字</code> , <code>连字符 (-)</code>，不允许出现空格，空格将转化为 <code>连字符 (-)</code> 。（例如： <code>2018JXNUCubingCup</code> ）</span>
+        </span>
+    </div>
+
+    <!-- 日期-->
+    <div class="form-group">
+        <label for="comp-date">比赛日期 <span class="must">*</span></label>
+        <input type="text" id="comp-date" class="form-control" style="width: 100%">
+    </div>
+
+    <!-- 开设项目-->
+    <div class="form-group" id="event-options">
+        <label for="create_comp_form">开设项目 <span class="must">*</span></label>
+        <div class="table-responsive">
+            <table id="create_comp_form" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td style="min-width: 45px;">操作</td>
+                        <td>项目名称</td>
+                        <!-- <td>轮次</td> -->
+                        <td>计数规则</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            <button id="addEvent" type="button" class="btn btn-success btn-block btn-sm">
+                                <span class="fa fa-plus"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div id="msg-confirm" class="alert alert-info" role="alert"><strong>确认开设项目：</strong><br></div>
+</form>
+
+<!---------------- END ------------------->
+
+</div>
+</div>
+</div>
+</body>
+</html>
